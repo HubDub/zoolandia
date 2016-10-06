@@ -9,9 +9,15 @@ namespace Zoolandia.Animals
     public bool wings {get; set;}
     public int numberFeet {get; set;}
 
+    public string hero {get; set;}
+    public CardinalisCardinalis ()
+    {
+      this.hero = "Foghorn Leghorn";
+    }
+
     public override string greet()
     {
-      return $"This redbird has wings, {this.wings}, and also has {this.numberFeet} feet!\n{base.greet()}";
+      return $"This redbird has wings, {this.wings}, and also has {this.numberFeet} feet! \nHis hero is {this.hero}.\n{base.greet()}";
     }
   }
 } 
