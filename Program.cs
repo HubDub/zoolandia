@@ -5,55 +5,173 @@ namespace Zoolandia
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            Animal firstAnimal = null;
-            //I tried to instantiate a new animal here, create the name and eats properties here and do the writelog for the name and eats here so that I did not have to write those properties into each of the instances below but it would not work. 
             
-            switch (args[2])
+    //creating instances of iquanas
+            disosaurusDorsalis firstIguana = new disosaurusDorsalis()
             {
-                case "iquana":
-                    firstAnimal = new disosaurusDorsalis
-                    {
-                        color = "green",
-                        teeth = true,
-                        name = args[0],
-                        eats = args[1]
-                    };
-                    Console.WriteLine(firstAnimal.greet());
-                    //I actually did the override in the first assignment because I wanted to print the name from the animal class as well as the properties of the species. If I had done a Console.WriteLine($"This desert iquana is {this.color} and it is {this.teeth} that he has teeth! Hello {this.name}, would you like some {this.eats}?") then I would not have had to override)
-                    break;
-                case "horse":
-                    firstAnimal = new equusFerusCaballus
-                    {
-                        furColor = "black",
-                        maneColor = "tan",
-                        name = args[0],
-                        eats = args[1]
-                    };
-                    Console.WriteLine(firstAnimal.greet());
-                    break;
-                case "bird":
-                    firstAnimal = new CardinalisCardinalis
-                    {
-                        wings = true,
-                        numberFeet = 2,
-                        name = args[0],
-                        eats = args[1]
-                    };
-                    Console.WriteLine(firstAnimal.greet());
-                    break;
-                case "whale":
-                    firstAnimal = new balaenopteraMusculus
-                    {
-                        skinColor = "grey",
-                        numFins = 2,
-                        name = args[0],
-                        eats = args[1]
-                    };
-                    Console.WriteLine(firstAnimal.greet());
-                    break;
-            }
+                color = "green",
+                teeth = true,
+                name = "Billy",
+                eats = "insects"
+            };
+            Console.WriteLine(firstIguana.greet());
+            Console.WriteLine($"His hero is {firstIguana.hero}");
+
+            disosaurusDorsalis secondIguana = new disosaurusDorsalis("Greg")
+            {
+                color = "green",
+                teeth = true,
+                name = "Billy",
+                eats = "insects"
+            };
+            Console.WriteLine(secondIguana.greet());
+            Console.WriteLine($"His hero is {secondIguana.hero}");
+
+            disosaurusDorsalis thirdIguana = new disosaurusDorsalis(10)
+            {
+                color = "green",
+                teeth = true,
+                name = "Billy",
+                eats = "insects"
+            };
+            Console.WriteLine(thirdIguana.greet());
+            Console.WriteLine($"He has {thirdIguana.toes} toes.");
+
+            disosaurusDorsalis fourthIguana = new disosaurusDorsalis("Greg", 10)
+            {
+                color = "green",
+                teeth = true,
+                name = "Billy",
+                eats = "insects"
+            };
+            Console.WriteLine(fourthIguana.greet());
+            Console.WriteLine($"His hero is {secondIguana.hero} and He has {fourthIguana.toes} toes.");
+            
+    //creating instances of horses
+            equusFerusCaballus firstHorse = new equusFerusCaballus()
+            {
+                furColor = "black",
+                maneColor = "tan",
+                name = "Dan",
+                eats = "hay"
+            };
+            Console.WriteLine(firstHorse.greet());
+            Console.WriteLine($"His hero is {firstHorse.hero}.");
+
+            equusFerusCaballus secondHorse = new equusFerusCaballus("Joe")
+            {
+                furColor = "black",
+                maneColor = "tan",
+                name = "Dan",
+                eats = "hay"
+            };
+            Console.WriteLine(secondHorse.greet());
+            Console.WriteLine($"His hero is {secondHorse.hero}.");       
+
+            equusFerusCaballus thirdHorse = new equusFerusCaballus("0")
+            {
+                furColor = "black",
+                maneColor = "tan",
+                name = "Dan",
+                eats = "hay"
+            };
+            Console.WriteLine(thirdHorse.greet());
+            Console.WriteLine($"He has {thirdHorse.toes} toes.");         
+
+            equusFerusCaballus fourthHorse = new equusFerusCaballus("0")
+            {
+                furColor = "black",
+                maneColor = "tan",
+                name = "Dan",
+                eats = "hay"
+            };
+            Console.WriteLine(fourthHorse.greet());
+            Console.WriteLine($"His hero is {fourthHorse.hero} and he has {fourthHorse.toes} toes.");        
+
+    //creating instances of birds
+            cardinalisCardinalis firstBird = new cardinalisCardinalis()
+            {
+                wings = true,
+                numberFeet = 2,
+                name = "Dolly",
+                eats = "berries"
+            };
+            Console.WriteLine(firstBird.greet());
+            Console.WriteLine($"Her hero is {firstBird.hero}.");
+
+            cardinalisCardinalis secondBird = new cardinalisCardinalis("Ryan")
+            {
+                wings = true,
+                numberFeet = 2,
+                name = "Dolly",
+                eats = "berries"
+            };
+            Console.WriteLine(secondBird.greet());
+            Console.WriteLine($"Her hero is {secondBird.hero}.");
+
+            cardinalisCardinalis thirdBird = new cardinalisCardinalis(6)
+            {
+                wings = true,
+                numberFeet = 2,
+                name = "Dolly",
+                eats = "berries"
+            };
+            Console.WriteLine(thirdBird.greet());
+            Console.WriteLine($"She has {thirdBird.toes} toes.");      
+
+            cardinalisCardinalis fourthBird = new cardinalisCardinalis(6)
+            {
+                wings = true,
+                numberFeet = 2,
+                name = "Dolly",
+                eats = "berries"
+            };
+            Console.WriteLine(fourthBird.greet());
+            Console.WriteLine($"Her hero is {fourthBird.hero} and she has {fourthBird.toes} toes.");        
+            
+    //creating instances of whales
+            balaenopteraMusculus firstWhale = new balaenopteraMusculus()
+            {
+                skinColor = "grey",
+                numFins = 2,
+                name = "Ellen",
+                eats = "krill"
+            };
+            Console.WriteLine(firstWhale.greet());
+            Console.WriteLine($"Her hero is {firstWhale.hero}.");
+
+            balaenopteraMusculus secondWhale = new balaenopteraMusculus("Scott")
+            {
+                skinColor = "grey",
+                numFins = 2,
+                name = "Ellen",
+                eats = "krill"
+            };
+            Console.WriteLine(secondWhale.greet());
+            Console.WriteLine($"Her hero is {secondWhale.hero}.");
+
+            balaenopteraMusculus thirdWhale = new balaenopteraMusculus("0")
+            {
+                skinColor = "grey",
+                numFins = 2,
+                name = "Ellen",
+                eats = "krill"
+            };
+            Console.WriteLine(thirdWhale.greet());
+            Console.WriteLine($"She has {thirdWhale.toes} toes.");
+
+            balaenopteraMusculus fourthWhale = new balaenopteraMusculus("0")
+            {
+                skinColor = "grey",
+                numFins = 2,
+                name = "Ellen",
+                eats = "krill"
+            };
+            Console.WriteLine(fourthWhale.greet());
+            Console.WriteLine($"Her hero is {fourthWhale.hero}and she has {fourthWhale.toes} toes.");
+
         }
     }
 }
