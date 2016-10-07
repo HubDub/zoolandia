@@ -2,35 +2,43 @@ using System;
 
 namespace Zoolandia.Animals
 {
-  public class equusFerusCaballus: Animal 
+  
+  public class Equus: Animal
   {
-    public string furColor {get; set;}
-    public string maneColor {get; set;}
-    public string hero {get; set;}
+    public int legs = 4;
+    public bool skeleton = true;
 
-    public int toes {get; set;}
-    public equusFerusCaballus ()
-    {
-      this.hero = "Mr. Ed";
-    }
+    public string blooded = "warm";
 
-    public equusFerusCaballus (string hero1)
+    public override string greet()
     {
-      this.hero = hero1;
+      return $"He has {this.legs} legs, is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. {base.greet()}";
     }
-    public equusFerusCaballus (int toes1)
-    {
-      this.toes = toes1;
-    }
-    public equusFerusCaballus (string hero1, int toes1)
-    {
-      this.hero = hero1;
-      this.toes = toes1;
-    }
+  }
+  public class EquusFerusCaballus: Equus 
+  {
+    public string furColor = "black";
+    public string maneColor = "tan";
+    public string hero = "Mr. Ed";
+
+    //below is constructor
+    // public equusFerusCaballus ()
+    // {
+    //   this.hero = "Mr. Ed";
+    // }
 
     public override string greet()
     {
       return $"This Arabian horse has {this.furColor} colored fur with a {this.maneColor} mane! {base.greet()}";
+    }
+
+    public string talking()
+    {
+      return $"He is giving you the silent treatment!";
+    }
+    public string talking(string talk)
+    {
+      return $"He is naying at you.";
     }
   }
 } 

@@ -2,39 +2,46 @@ using System;
 
 namespace Zoolandia.Animals
 {
-  public class cardinalisCardinalis: Animal 
+
+  public class Cardinalis: Animal
+  {
+    public int legs = 2;
+    public bool skeleton = true;
+
+    public string blooded = "warm";
+
+    public override string greet()
+    {
+      return $"He has {this.legs} legs, is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. {base.greet()}";
+    }
+  }
+  
+  public class CardinalisCardinalis: Cardinalis 
   {
 
-    // CardinalisCardinalis = new Animal; but doesn't the above do that?
-    public bool wings {get; set;}
-    public int numberFeet {get; set;}
+    public bool wings = true;
+    public int numberFeet = 2;
 
-    public string hero {get; set;}
-    public int toes {get; set;}
+    public string hero = "Foghorn Leghorn";
     
-    public cardinalisCardinalis ()
-    {
-      this.hero = "Foghorn Leghorn";
-    }
-
-    public cardinalisCardinalis (string hero1)
-    {
-      this.hero = hero1;
-    }
-    public cardinalisCardinalis (int toes1)
-    {
-      this.toes = toes1;
-    }
-    public cardinalisCardinalis (string hero1, int toes1)
-    {
-      this.hero = hero1;
-      this.toes = toes1;
-    }
-    
+    //constructor 
+    // public CardinalisCardinalis ()
+    // {
+    //   this.hero = "Foghorn Leghorn";
+    // }
 
     public override string greet()
     {
       return $"This redbird has wings, {this.wings}, and also has {this.numberFeet} feet! {base.greet()}";
+    }
+
+    public string talking()
+    {
+      return $"He is giving you the silent treatment!";
+    }
+    public string talking(string talk)
+    {
+      return $"He is chirping at you.";
     }
   }
 } 
