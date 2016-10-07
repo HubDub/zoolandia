@@ -70,7 +70,7 @@ namespace Zoolandia
             Console.WriteLine(secondHorse.greet());
             Console.WriteLine($"His hero is {secondHorse.hero}.");       
 
-            equusFerusCaballus thirdHorse = new equusFerusCaballus("0")
+            equusFerusCaballus thirdHorse = new equusFerusCaballus(0)
             {
                 furColor = "black",
                 maneColor = "tan",
@@ -80,7 +80,7 @@ namespace Zoolandia
             Console.WriteLine(thirdHorse.greet());
             Console.WriteLine($"He has {thirdHorse.toes} toes.");         
 
-            equusFerusCaballus fourthHorse = new equusFerusCaballus("0")
+            equusFerusCaballus fourthHorse = new equusFerusCaballus("Joe", 0)
             {
                 furColor = "black",
                 maneColor = "tan",
@@ -121,7 +121,7 @@ namespace Zoolandia
             Console.WriteLine(thirdBird.greet());
             Console.WriteLine($"She has {thirdBird.toes} toes.");      
 
-            cardinalisCardinalis fourthBird = new cardinalisCardinalis(6)
+            cardinalisCardinalis fourthBird = new cardinalisCardinalis("Ryan", 6)
             {
                 wings = true,
                 numberFeet = 2,
@@ -152,7 +152,7 @@ namespace Zoolandia
             Console.WriteLine(secondWhale.greet());
             Console.WriteLine($"Her hero is {secondWhale.hero}.");
 
-            balaenopteraMusculus thirdWhale = new balaenopteraMusculus("0")
+            balaenopteraMusculus thirdWhale = new balaenopteraMusculus(0)
             {
                 skinColor = "grey",
                 numFins = 2,
@@ -162,7 +162,7 @@ namespace Zoolandia
             Console.WriteLine(thirdWhale.greet());
             Console.WriteLine($"She has {thirdWhale.toes} toes.");
 
-            balaenopteraMusculus fourthWhale = new balaenopteraMusculus("0")
+            balaenopteraMusculus fourthWhale = new balaenopteraMusculus("Scott", 0)
             {
                 skinColor = "grey",
                 numFins = 2,
@@ -170,7 +170,7 @@ namespace Zoolandia
                 eats = "krill"
             };
             Console.WriteLine(fourthWhale.greet());
-            Console.WriteLine($"Her hero is {fourthWhale.hero}and she has {fourthWhale.toes} toes.");
+            Console.WriteLine($"Her hero is {fourthWhale.hero} and she has {fourthWhale.toes} toes.");
 
         }
     }

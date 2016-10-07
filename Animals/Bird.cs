@@ -25,6 +25,11 @@ namespace Zoolandia.Animals
     {
       this.toes = toes1;
     }
+    public cardinalisCardinalis (string hero1, int toes1)
+    {
+      this.hero = hero1;
+      this.toes = toes1;
+    }
     
 
     public override string greet()
