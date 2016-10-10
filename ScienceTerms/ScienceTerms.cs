@@ -7,3 +7,5 @@ namespace Zoolandia.Animals
         public string commonName {get; set;}
     }
 }
+
+//these set properties that are inherited by genus and species

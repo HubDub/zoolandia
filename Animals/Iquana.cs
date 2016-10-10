@@ -19,3 +19,5 @@ namespace Zoolandia.Animals
     }
   }
 } 
+
+//here we both create and set the values for properties on Iguana. we also create the method greet for this class. This greet method also calls the base greet, so after it is done console writing it will call the greet function located in the Animal class. 

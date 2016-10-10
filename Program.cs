@@ -15,9 +15,14 @@ namespace Zoolandia
                 food = "insects",
                 species = new DisosaurusDorsalis()
             };
+            //both Iguana and animal have greet method so it chooses the greet located on Iguana and then if told to go to the base from there it will run the greet method on Animal
             Console.WriteLine(firstIguana.greet());
+            //here is located in the Iguana class, but we can access it here because this is after a new iguana is instantiated. so the object has the hero on it
             Console.WriteLine($"His hero is {firstIguana.hero}");
+            //this calls the action method located on the Animal class. it does not matter what string I have added here, just adding a string makes it overload and run a specific method that calls for a string to be passed.
             Console.WriteLine(firstIguana.action("radish"));
+            //this console write digs into the species and then genus properties
+            Console.WriteLine($"You can learn more about {firstIguana.species.commonName}s at {firstIguana.species.url} and about {firstIguana.species.genus.commonName}s in general at {firstIguana.species.genus.url}");
             
     //creating instances of horses
             Horse firstHorse = new Horse()
