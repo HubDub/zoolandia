@@ -9,64 +9,70 @@ namespace Zoolandia
         {
             
     //creating instances of iquanas
-            DisosaurusDorsalis firstIguana = new DisosaurusDorsalis()
+            Iguana firstIguana = new Iguana()
             {
                 name = "Billy",
-                eats = "insects",
+                food = "insects",
+                species = new DisosaurusDorsalis()
             };
             Console.WriteLine(firstIguana.greet());
             Console.WriteLine($"His hero is {firstIguana.hero}");
-            Console.WriteLine(firstIguana.sleeps("yes"));
+            Console.WriteLine(firstIguana.action("radish"));
             
     //creating instances of horses
-            EquusFerusCaballus firstHorse = new EquusFerusCaballus()
+            Horse firstHorse = new Horse()
             {
                 name = "Dan",
-                eats = "hay"
+                food = "hay",
+                species = new EquusFerusCaballus()
             };
             Console.WriteLine(firstHorse.greet());
             Console.WriteLine($"His hero is {firstHorse.hero}.");  
-            Console.WriteLine(firstHorse.talking());     
+            Console.WriteLine(firstHorse.action());     
 
     //creating instances of birds
-            CardinalisCardinalis firstBird = new CardinalisCardinalis()
+            Bird firstBird = new Bird()
             {
                 name = "Dolly",
-                eats = "berries"
+                food = "berries",
+                species = new CardinalisCardinalis()
             };
             Console.WriteLine(firstBird.greet());
             Console.WriteLine($"Her hero is {firstBird.hero}.");
-            Console.WriteLine(firstBird.talking("yes"));
+            Console.WriteLine(firstBird.action("cricket"));
 
     //creating instances of whales
-            BalaenopteraMusculus firstWhale = new BalaenopteraMusculus()
+            Whale firstWhale = new Whale()
             {
                 name = "Ellen",
-                eats = "krill"
+                food = "krill",
+                species = new BalaenopteraMusculus()
             };
             Console.WriteLine(firstWhale.greet());
             Console.WriteLine($"Her hero is {firstWhale.hero}.");
-            Console.WriteLine(firstWhale.singing("yes", 2));
+            Console.WriteLine(firstWhale.singing("sing", 8));
 
     //creating instances of elephants
-            ElephasMaximusIndicus firstElephant = new ElephasMaximusIndicus()
+            Elephant firstElephant = new Elephant()
             {
                 name = "Bob",
-                eats = "grass"
+                food = "grass",
+                species = new ElephasMaximusIndicus()
             };
             Console.WriteLine(firstElephant.greet());
             Console.WriteLine($"His hero is {firstElephant.hero}.");
-            Console.WriteLine(firstElephant.running("yes", 10));
+            Console.WriteLine(firstElephant.action());
 
     //creating instances of Lions
-            PantheraLeo firstCat = new PantheraLeo()
+            Lion firstCat = new Lion()
             {
                 name = "Leo",
-                eats = "slow impala"
+                food = "slow impala",
+                species = new PantheraLeo()
             };
             Console.WriteLine(firstCat.greet());
             Console.WriteLine($"His hero is {firstCat.hero}.");
-            Console.WriteLine(firstCat.action("yes", "gazelle", true));
+            Console.WriteLine(firstCat.activity("run", "gazelle", true));
         }
     }
 }
