@@ -1,7 +1,7 @@
 namespace Zoolandia.Animals
 {
 
-  public class Bird : Animal
+  public class Bird : Animal, IFly
   {
     public int legs = 2;
     public bool skeleton = true;
@@ -12,9 +12,15 @@ namespace Zoolandia.Animals
 
     public string hero = "Foghorn Leghorn";
 
+    public double flightSpeed {get; set;}
+
+    public Bird()
+    {
+      flightSpeed = 30;
+    }
     public override string greet()
     {
-      return $"This redbird has wings, {this.wings}, and also has {this.numberFeet} feet! He has {this.legs} legs, is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. {base.greet()}";
+      return $"This redbird has wings, {this.wings}, and also has {this.numberFeet} feet! He has {this.legs} legs, is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. He can fly somewhere around {this.flightSpeed} mph. {base.greet()}";
     }
  
     public string talking()

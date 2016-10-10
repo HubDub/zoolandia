@@ -1,7 +1,7 @@
 namespace Zoolandia.Animals
 {
 
-  public class Lion: Animal
+  public class Lion: Animal, IWalk
   {
     public int tail = 1;
     public bool skeleton = true;
@@ -13,9 +13,16 @@ namespace Zoolandia.Animals
     public string maneColor = "orangy";
 
     public string hero = "Pumbaa";
+
+    public double groundSpeed {get; set;}
+
+    public Lion()
+    {
+      groundSpeed = 50;
+    }
     public override string greet()
     {
-      return $"This lion is {this.furColor} in color, with a {this.maneColor} colored mane. He has {this.tail} tail, is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. {base.greet()}";
+      return $"This lion is {this.furColor} in color, with a {this.maneColor} colored mane. He has {this.tail} tail, is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. He can run up to {this.groundSpeed} mph. {base.greet()}";
     }
     public string activity()
     {

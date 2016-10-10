@@ -2,7 +2,7 @@ namespace Zoolandia.Animals
 {
 
     //below is the basic animal class with properties 
-    public class Animal
+    public class Animal : IAnimal
   {
     public string name {get; set;}
     public string food {get; set;}

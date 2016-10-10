@@ -1,7 +1,7 @@
 namespace Zoolandia.Animals
 {
 
-    public class Iguana: Animal
+    public class Iguana: Animal, IWalk
   {
     
     public bool skeleton = true;
@@ -11,11 +11,18 @@ namespace Zoolandia.Animals
     public string color = "tan";
     
     public string hero = "Godzilla";
+    //I am required to put a groundspeed in but I can't set the value because it makes me do the get/set just as I did in the interface and I cant assign the value in the interface.
+    public double groundSpeed {get; set;}
 
+    //I created a constructor so that I could assign a groundspeed value to all my iguanas
+    public Iguana()
+      {
+        groundSpeed = 2;
+      }
 
     public override string greet()
     {
-      return $"The iguana is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. He is {this.color}. {base.greet()}";
+      return $"The iguana is {this.blooded} blooded, and it is {this.skeleton} that he has a skeleton. He is {this.color} and can move {this.groundSpeed} inches per second. {base.greet()}";
     }
   }
 } 
