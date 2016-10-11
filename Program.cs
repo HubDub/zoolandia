@@ -93,7 +93,6 @@ namespace Zoolandia
             savannah.inhabitants.Add(bob);
             savannah.inhabitants.Add(leo);
 
-            //this will output each critter in each habitat, but it's not in the format called for. in order to get it in that format, we'll need a list of habitats to loop through. to create that, I had to create a new class that is outside of the Habitats namespace
             // foreach(Animal critter in dryAquarium.inhabitants)
             // {
             //     Console.WriteLine($"\nAnimals in the dry aquarium habitat:\n{critter.name}, - {critter.species.commonName}");
@@ -111,6 +110,7 @@ namespace Zoolandia
             //     Console.WriteLine($"\nAnimals in the wet aquarium habitat:\n{critter.name}, - {critter.species.commonName}");
             // }
 
+            //the above will output each critter in each habitat, but it's not in the format called for. it's also repeating the same code over and over so isn't dry. in order to get it in that format, we'll need a list of habitats to loop through. to create that, I had to create a new class that is outside of the Habitats namespace
             //so instantiate new allHabitats, which is located in zoo.cs in Enclosures folder and add the habitats to the list that is a property on AllHabitats
             AllHabitats zoolandia = new AllHabitats();
             zoolandia.allHabitats.Add(savannah);
