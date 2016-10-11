@@ -1,5 +1,6 @@
 ﻿using System;
 using Zoolandia.Animals;
+using Zoolandia.Enclosures;
 using Zoolandia.Habitats;
 
 namespace Zoolandia
@@ -13,14 +14,14 @@ namespace Zoolandia
             {
                 sqFootage = 15000,
                 lake = true,
-                name = "Savannah"
+                name = "Savannah Habitat"
             };
 
             Aviary aviary = new Aviary()
             {
                 volume = 10000,
                 trees = true,
-                name = "Aviary"
+                name = "Aviary Habitat"
             };
             //this is another way of instantiating objects and assigning props
             Aquarium wetAquarium = new Aquarium();
@@ -43,14 +44,6 @@ namespace Zoolandia
                 food = "insects",
                 species = new DisosaurusDorsalis()
             };
-            //both Iguana and animal have greet method so it chooses the greet located on Iguana and then if told to go to the base from there it will run the greet method on Animal
-            Console.WriteLine(billy.greet());
-            //here is located in the Iguana class, but we can access it here because this is after a new iguana is instantiated. so the object has the hero on it
-            Console.WriteLine($"His hero is {billy.hero}");
-            //this calls the action method located on the Animal class. it does not matter what string I have added here, just adding a string makes it overload and run a specific method that calls for a string to be passed.
-            Console.WriteLine(billy.action("radish"));
-            //this console write digs into the species and then genus properties
-            Console.WriteLine($"You can learn more about {billy.species.commonName}s at {billy.species.url} and about {billy.species.genus.commonName}s in general at {billy.species.genus.url}");
             
             //creating instances of horses
             Horse dan = new Horse()
@@ -59,9 +52,6 @@ namespace Zoolandia
                 food = "hay",
                 species = new EquusFerusCaballus()
             };
-            Console.WriteLine(dan.greet());
-            Console.WriteLine($"His hero is {dan.hero}.");  
-            Console.WriteLine(dan.action());     
 
             //creating instances of birds
             Bird dolly = new Bird()
@@ -70,9 +60,6 @@ namespace Zoolandia
                 food = "berries",
                 species = new CardinalisCardinalis()
             };
-            Console.WriteLine(dolly.greet());
-            Console.WriteLine($"Her hero is {dolly.hero}.");
-            Console.WriteLine(dolly.action("cricket"));
 
             //creating instances of whales
             Whale ellen = new Whale()
@@ -81,9 +68,6 @@ namespace Zoolandia
                 food = "krill",
                 species = new BalaenopteraMusculus()
             };
-            Console.WriteLine(ellen.greet());
-            Console.WriteLine($"Her hero is {ellen.hero}.");
-            Console.WriteLine(ellen.singing("sing", 8));
 
             //creating instances of elephants
             Elephant bob = new Elephant()
@@ -92,9 +76,6 @@ namespace Zoolandia
                 food = "grass",
                 species = new ElephasMaximusIndicus()
             };
-            Console.WriteLine(bob.greet());
-            Console.WriteLine($"His hero is {bob.hero}.");
-            Console.WriteLine(bob.action());
 
             //creating instances of Lions
             Lion leo = new Lion()
@@ -103,9 +84,6 @@ namespace Zoolandia
                 food = "slow impala",
                 species = new PantheraLeo()
             };
-            Console.WriteLine(leo.greet());
-            Console.WriteLine($"His hero is {leo.hero}.");
-            Console.WriteLine(leo.activity("run", "gazelle", true));
 
             //adding animals to habitats
             dryAquarium.inhabitants.Add(billy);
@@ -115,9 +93,40 @@ namespace Zoolandia
             savannah.inhabitants.Add(bob);
             savannah.inhabitants.Add(leo);
 
-            foreach(Animal critter in dryAquarium.inhabitants)
+            //this will output each critter in each habitat, but it's not in the format called for. in order to get it in that format, we'll need a list of habitats to loop through. to create that, I had to create a new class that is outside of the Habitats namespace
+            // foreach(Animal critter in dryAquarium.inhabitants)
+            // {
+            //     Console.WriteLine($"\nAnimals in the dry aquarium habitat:\n{critter.name}, - {critter.species.commonName}");
+            // }
+            // foreach(Animal critter in savannah.inhabitants)
+            // {
+            //     Console.WriteLine($"\nAnimals in the savannah habitat:\n{critter.name}, - {critter.species.commonName}");
+            // }
+            // foreach(Animal critter in aviary.inhabitants)
+            // {
+            //     Console.WriteLine($"\nAnimals in the aviary habitat:\n{critter.name}, - {critter.species.commonName}");
+            // }
+            // foreach(Animal critter in wetAquarium.inhabitants)
+            // {
+            //     Console.WriteLine($"\nAnimals in the wet aquarium habitat:\n{critter.name}, - {critter.species.commonName}");
+            // }
+
+            //so instantiate new allHabitats, which is located in zoo.cs in Enclosures folder and add the habitats to the list that is a property on AllHabitats
+            AllHabitats zoolandia = new AllHabitats();
+            zoolandia.allHabitats.Add(savannah);
+            zoolandia.allHabitats.Add(aviary);
+            zoolandia.allHabitats.Add(wetAquarium);
+            zoolandia.allHabitats.Add(dryAquarium);
+            
+            //output
+            Console.WriteLine("Welcome to Zoolandia!");
+            foreach(Habitat habitat in zoolandia.allHabitats)
             {
-                Console.WriteLine($"\nAnimals in the Dry Aquarium:\ncritter.name");
+                Console.WriteLine($"\nAnimals in {habitat.name}:");
+                foreach(Animal critter in habitat.inhabitants)
+                {
+                    Console.WriteLine($"{critter.name} - {critter.species.commonName}");
+                }
             }
         }
     }
